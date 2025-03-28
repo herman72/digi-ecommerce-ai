@@ -11,3 +11,5 @@ docker run --name digi -e POSTGRES_PASSWORD= -e POSTGRES_DB=digi_db -p 5432:5432
 \c dbname	Connect to database
 \q	Quit psql
 \?	Show help (all commands)
+
+DROP DATABASE digi_db;
