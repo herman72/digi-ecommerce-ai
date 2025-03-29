@@ -24,7 +24,7 @@ class Product(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     description = Column(Text)
-    category_id = Column(Integer, ForeignKey('category.id'))
+    category_id = Column(Integer, ForeignKey('category.id'), nullable=False)
     
     category = relationship('Category', backref='products')
 
@@ -32,7 +32,7 @@ class ProductAttribute(Base):
     __tablename__ = 'product_attributes'
     
     id = Column(Integer, primary_key=True)
-    product_id = Column(Integer, ForeignKey('product.id'))
+    product_id = Column(Integer, ForeignKey('product.id'), nullable=False)
     attribute_name = Column(Text, nullable=False)
     attribute_value = Column(Text)
     
@@ -42,7 +42,7 @@ class ProductVariant(Base):
     __tablename__ = 'product_variants'
     
     id = Column(Integer, primary_key=True)
-    product_id = Column(Integer, ForeignKey('product.id'))
+    product_id = Column(Integer, ForeignKey('product.id'), nullable=False)
     variant_name = Column(Text, nullable=False)
     price = Column(Integer)
     stock_quantity = Column(Integer, nullable=False)
