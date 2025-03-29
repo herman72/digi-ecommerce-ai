@@ -8,7 +8,7 @@ app = FastAPI(
     version="0.1",
 )
 
-app.include_router(category_router, prefix="/category", tags=["goods"])
+app.include_router(category_router, prefix="/api/v1", tags=["goods"])
 
 @app.get("/")
 async def root():
